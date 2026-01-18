@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="quiz.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header">
+    <h1>Quiz App</h1>
+  </div>
+
+  <!-- MENU -->
+  <div id="menu">
+    <button onclick="goPlay()">PLAY</button>
+    <button onclick="goEdit()">EDIT</button>
+  </div>
+
+  <!-- START VIEW -->
+  <div id="start">Start Quiz!</div>
+
+  <!-- QUIZ VIEW -->
+  <div id="quiz">
+    <div id="question">Question</div>
+
+    <div id="choices">
+      <div class="choice" id="A" onclick="onPlayerSubmit('A')"></div>
+      <div class="choice" id="B" onclick="onPlayerSubmit('B')"></div>
+      <div class="choice" id="C" onclick="onPlayerSubmit('C')"></div>
+      <div class="choice" id="D" onclick="onPlayerSubmit('D')"></div>
+    </div>
+
+    <div id="progressBar"></div>
+  </div>
+
+  <!-- SCORE VIEW -->
+  <div id="scoreContainer"></div>
+
+  <!-- EDIT VIEW -->
+  <div id="edit">
+    <div class="edit-header">
+      <button class="add-btn" onclick="openAddDialog()">+ Add question</button>
+    </div>
+
+    <ul id="questionList" class="question-list"></ul>
+  </div>
+
+  <!-- DIALOG MODAL -->
+  <div id="dialog" class="dialog-modal">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <h2 id="dialogTitle">Create new question</h2>
+      </div>
+      
+      <div class="dialog-body">
+        <label>Title</label>
+        <input id="dialogQTitle" type="text" placeholder="Question title">
+        
+        <label>Answers</label>
+        <input id="dialogQA" type="text" placeholder="Answer A">
+        <input id="dialogQB" type="text" placeholder="Answer B">
+        <input id="dialogQC" type="text" placeholder="Answer C">
+        <input id="dialogQD" type="text" placeholder="Answer D">
+        
+        <label>Correct Answer</label>
+        <input id="dialogQCorrect" type="text" placeholder="Correct (A/B/C/D)">
+      </div>
+
+      <div class="dialog-footer">
+        <button class="btn-cancel" onclick="closeDialog()">Cancel</button>
+        <button class="btn-create" onclick="saveQuestion()">Create</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
